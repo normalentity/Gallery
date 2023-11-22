@@ -1,0 +1,26 @@
+{
+    "sourceFile": "config/config.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1700641171595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700641178118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n {\n-     \"path_to_folder\": \"\"\n+     \"path_to_folder\": \"/Users/nafa\"\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1700641187343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n {\n-     \"path_to_folder\": \"/Users/nafa\"\n+     \"path_to_folder\": \"/Users/nafayahmed/Downloads/\"\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1700641171595,
+            "name": "Commit-0",
+            "content": "{\n     \"path_to_folder\": \"\"\n}"
+        }
+    ]
+}

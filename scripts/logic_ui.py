@@ -4,8 +4,9 @@ from flet import *
 
 
 class LogicUI(UserControl):
-    def __init__(self, page: Page):
+    def __init__(self, page):
         super().__init__()
+        self.page=page
         self.config_checker = ConfigChecker()
         from ui.gallery_ui import GalleryUI
 

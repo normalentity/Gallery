@@ -6,6 +6,7 @@ from scripts.logic_ui import LogicUI
 
 
 
+global page
 def main(page:Page):
     # window settings
     page.window_width = 900
@@ -17,16 +18,17 @@ def main(page:Page):
     page.appbar = AppBarUI(page).appbar_container
 
     app = GalleryUI(page=page)
+    config = ConfigChecker()
+    l = LogicUI(page=page)
+
+    config.create_json_file()
+    l.draw_images()
+
     page.add(app)
 
     page.update()
 
 
 if __name__ == "__main__":
-    config = ConfigChecker()
-    l = LogicUI(page=Page)
-
-    config.create_json_file()
-    l.draw_images()
-
+    
     app(target=main)

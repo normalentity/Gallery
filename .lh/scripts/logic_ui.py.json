@@ -1,0 +1,22 @@
+{
+    "sourceFile": "scripts/logic_ui.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1700641352807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700641359230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n \n class LogicUI(UserControl):\n     def __init__(self, page):\n         super().__init__()\n+        self.page=page\n         self.config_checker = ConfigChecker()\n         from ui.gallery_ui import GalleryUI\n \n         self.gallery_ui = GalleryUI(page=Page)\n"
+                }
+            ],
+            "date": 1700641352807,
+            "name": "Commit-0",
+            "content": "import os\nfrom scripts.config_checker import ConfigChecker\nfrom flet import *\n\n\nclass LogicUI(UserControl):\n    def __init__(self, page):\n        super().__init__()\n        self.config_checker = ConfigChecker()\n        from ui.gallery_ui import GalleryUI\n\n        self.gallery_ui = GalleryUI(page=Page)\n\n        self.page = page\n\n        self.folder_path = self.config_checker.get_folder_path()\n        self.files = os.listdir(self.folder_path)\n\n        # Filter only images (for example, with the extension .jpg or .png)\n        self.images_filter = [f for f in self.files if f.endswith((\".png\", \".svg\", \".jpg\"))]\n\n    def load_images(self):\n        # Load and process each image\n\n        for self.image_file in self.images_filter:\n            self.images_path = os.path.join(self.folder_path, self.image_file)\n            \n            return self.images_path\n        \n    def draw_images(self):\n        self.gallery_ui.images_row.controls.append(\n            Image(\n                src=self.load_images(),\n                width=200,\n                height=200,\n                fit=ImageFit.NONE,\n                repeat=ImageRepeat.NO_REPEAT,\n                border_radius=border_radius.all(10),\n            )\n        )\n        self.page.update()"
+        }
+    ]
+}

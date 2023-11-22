@@ -1,0 +1,30 @@
+{
+    "sourceFile": "main.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1700641269298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700641285199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n \n \n \n def main(page:Page):\n+    \n     # window settings\n     page.window_width = 900\n     page.window_height = 600\n     page.window_center()\n"
+                },
+                {
+                    "date": 1700641301472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n from scripts.logic_ui import LogicUI\n \n \n \n+    global page\n def main(page:Page):\n-    \n     # window settings\n     page.window_width = 900\n     page.window_height = 600\n     page.window_center()\n"
+                },
+                {
+                    "date": 1700641339774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n from scripts.logic_ui import LogicUI\n \n \n \n-    global page\n+global page\n def main(page:Page):\n     # window settings\n     page.window_width = 900\n     page.window_height = 600\n@@ -23,11 +23,6 @@\n     page.update()\n \n \n if __name__ == \"__main__\":\n-    config = ConfigChecker()\n-    l = LogicUI(page=page)\n-\n-    config.create_json_file()\n-    l.draw_images()\n-\n+    \n     app(target=main)\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1700641269297,
+            "name": "Commit-0",
+            "content": "from flet import *\nfrom scripts.config_checker import ConfigChecker\nfrom ui.appbar import AppBarUI\nfrom ui.gallery_ui import GalleryUI\nfrom scripts.logic_ui import LogicUI\n\n\n\ndef main(page:Page):\n    # window settings\n    page.window_width = 900\n    page.window_height = 600\n    page.window_center()\n    page.window_resizable = False\n    page.title = \"Gallery Photo\"\n\n    page.appbar = AppBarUI(page).appbar_container\n\n    app = GalleryUI(page=page)\n    page.add(app)\n\n    page.update()\n\n\nif __name__ == \"__main__\":\n    config = ConfigChecker()\n    l = LogicUI(page=page)\n\n    config.create_json_file()\n    l.draw_images()\n\n    app(target=main)"
+        }
+    ]
+}
